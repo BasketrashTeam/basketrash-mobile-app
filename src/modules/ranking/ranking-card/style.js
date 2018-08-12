@@ -2,7 +2,11 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   cardContainer: {
-    padding: 0,
+    padding: 1,
+  },
+  divider: {
+    marginBottom: 5,
+    marginTop: 5,
   },
   firstName: {
     flex: 2,
@@ -18,5 +22,8 @@ export default StyleSheet.create({
   },
   nameGroup: {
     flex: 1,
+  },
+  playerContainer: {
+    flexDirection: 'row',
   },
 });

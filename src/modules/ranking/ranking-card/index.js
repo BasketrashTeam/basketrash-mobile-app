@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, View } from 'react-native';
-import { Avatar, Card, Text } from 'react-native-elements';
+import {
+  Avatar,
+  Card,
+  Divider,
+  Text,
+} from 'react-native-elements';
 
 import style from './style';
 
@@ -9,18 +14,20 @@ const RankingCard = (props) => {
   const { avatarSource, firstName, lastName } = props;
 
   return (
-    <Card containerStyle={style.cardContainer} flexDirection="row">
-      <View>
+    <Card containerStyle={style.cardContainer}>
+      <View style={style.playerContainer}>
+        {/* What to do when the avatar cannot load? (Like there is no internet connection) */}
         <Avatar width={128} source={avatarSource} />
+        <View style={style.nameGroup}>
+          <Text numberOfLines={1} style={style.firstName}>
+            {firstName}
+          </Text>
+          <Text numberOfLines={1} style={style.lastName}>
+            {lastName}
+          </Text>
+        </View>
       </View>
-      <View style={style.nameGroup}>
-        <Text numberOfLines={1} style={style.firstName}>
-          {firstName}
-        </Text>
-        <Text numberOfLines={1} style={style.lastName}>
-          {lastName}
-        </Text>
-      </View>
+      <Divider style={style.divider} />
       {/* A divider separating the player identifier from its statistics */}
       {/* The rank of the player. It must be special for 1st, 2nd and 3rd */}
       {/* How many points the player has */}
