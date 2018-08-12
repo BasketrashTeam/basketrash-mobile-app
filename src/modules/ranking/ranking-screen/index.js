@@ -1,7 +1,14 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 
-import Ranking from '../../components/ranking';
+import style from './style';
 
-const RankingScreen = () => <Ranking />;
+const RankingScreen = () => (
+  <View style={style.container}>
+    <Text>
+      This will be the ranking screen
+    </Text>
+  </View>
+);
 
 export default RankingScreen;
