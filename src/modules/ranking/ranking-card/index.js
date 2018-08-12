@@ -28,7 +28,6 @@ const RankingCard = (props) => {
         </View>
       </View>
       <Divider style={style.divider} />
-      {/* A divider separating the player identifier from its statistics */}
       {/* The rank of the player. It must be special for 1st, 2nd and 3rd */}
       {/* How many points the player has */}
       {/* Statistics about the player position from last game */}
