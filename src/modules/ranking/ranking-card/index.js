@@ -11,13 +11,14 @@ const RankingCard = (props) => {
     firstName,
     lastName,
     rank,
+    score,
   } = props;
 
   return (
     <Card containerStyle={style.cardContainer}>
       <PlayerIdentification avatarSource={avatarSource} firstName={firstName} lastName={lastName} />
       <Divider style={style.divider} />
-      <PlayerStatistics rank={rank} />
+      <PlayerStatistics rank={rank} score={score} />
     </Card>
   );
 };
@@ -27,6 +28,9 @@ RankingCard.propTypes = {
   ...PlayerStatistics.propTypes,
 };
 
-RankingCard.defaultProps = PlayerIdentification.defaultProps;
+RankingCard.defaultProps = {
+  ...PlayerIdentification.defaultProps,
+  ...PlayerStatistics.defaultProps,
+};
 
 export default RankingCard;

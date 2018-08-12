@@ -38,21 +38,45 @@ Rank.propTypes = {
 };
 
 // ============================================================
+// SCORE
+// ============================================================
+
+const Score = ({ score }) => (
+  <View style={style.scoreContainer}>
+    <Icon name="basketball-ball" style={style.scoreIcon} />
+    <Text style={style.scoreValue}>
+      {score}
+    </Text>
+  </View>
+);
+
+Score.propTypes = {
+  score: PropTypes.number,
+};
+
+Score.defaultProps = {
+  score: 0,
+};
+
+// ============================================================
 // PLAYER STATISTICS
 // ============================================================
 
-const PlayerStatistics = (props) => {
-  const { rank } = props;
+const PlayerStatistics = ({ rank, score }) => (
+  <View style={style.container}>
+    <Rank rank={rank} />
+    <Score score={score} />
+    {/* Statistics about the player position from last game */}
+  </View>
+);
 
-  return (
-    <View style={style.container}>
-      <Rank rank={rank} />
-      {/* How many points the player has */}
-      {/* Statistics about the player position from last game */}
-    </View>
-  );
+PlayerStatistics.propTypes = {
+  ...Rank.propTypes,
+  ...Score.propTypes,
 };
 
-PlayerStatistics.propTypes = Rank.propTypes;
+PlayerStatistics.defaultProps = {
+  ...Score.defaultProps,
+};
 
 export default PlayerStatistics;

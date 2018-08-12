@@ -1,13 +1,17 @@
 import { StyleSheet } from 'react-native';
 
+const defaultElementStyle = {
+  fontSize: 30,
+  textAlignVertical: 'center',
+};
+
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   rank: {
-    fontSize: 30,
-    textAlignVertical: 'center',
+    ...defaultElementStyle,
   },
   rankBronze: {
     color: '#965A38',
@@ -17,5 +21,16 @@ export default StyleSheet.create({
   },
   rankSilver: {
     color: '#A8A8A8',
+  },
+  scoreContainer: {
+    flexDirection: 'row',
+  },
+  scoreIcon: {
+    ...defaultElementStyle,
+    paddingRight: 5,
+  },
+  scoreValue: {
+    ...defaultElementStyle,
+    paddingLeft: 5,
   },
 });
