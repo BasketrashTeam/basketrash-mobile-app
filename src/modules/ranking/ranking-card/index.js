@@ -8,6 +8,7 @@ import style from './style';
 const RankingCard = (props) => {
   const {
     avatarSource,
+    balance,
     firstName,
     lastName,
     rank,
@@ -18,7 +19,7 @@ const RankingCard = (props) => {
     <Card containerStyle={style.cardContainer}>
       <PlayerIdentification avatarSource={avatarSource} firstName={firstName} lastName={lastName} />
       <Divider style={style.divider} />
-      <PlayerStatistics rank={rank} score={score} />
+      <PlayerStatistics balance={balance} rank={rank} score={score} />
     </Card>
   );
 };

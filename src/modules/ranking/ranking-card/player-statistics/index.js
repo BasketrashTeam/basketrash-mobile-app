@@ -7,6 +7,56 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import style from './style';
 
 // ============================================================
+// BALANCE
+// ============================================================
+const Balance = ({ balance }) => (
+  <View style={style.balanceContainer}>
+    <BalanceIcon balance={balance} />
+    <BalanceText balance={balance} />
+  </View>
+);
+
+Balance.propTypes = {
+  balance: PropTypes.number.isRequired,
+};
+
+const BalanceIcon = ({ balance }) => {
+  if (balance > 0) {
+    return <Icon name="long-arrow-alt-up" style={{ ...style.balanceIcon, ...style.balanceIconPositive }} />;
+  }
+
+  if (balance < 0) {
+    return <Icon name="long-arrow-alt-down" style={{ ...style.balanceIcon, ...style.balanceIconNegative }} />;
+  }
+
+  return <Icon name="minus" style={{ ...style.balanceIcon, ...style.balanceIconZero }} />;
+};
+
+BalanceIcon.propTypes = Balance.propTypes;
+
+const BalanceText = ({ balance }) => {
+  if (balance > 1) {
+    return (
+      <Text style={style.balanceText}>
+        {balance}
+      </Text>
+    );
+  }
+
+  if (balance < -1) {
+    return (
+      <Text style={style.balanceText}>
+        {balance * (-1)}
+      </Text>
+    );
+  }
+
+  return null;
+};
+
+BalanceText.propTypes = Balance.propTypes;
+
+// ============================================================
 // RANK
 // ============================================================
 
@@ -62,15 +112,16 @@ Score.defaultProps = {
 // PLAYER STATISTICS
 // ============================================================
 
-const PlayerStatistics = ({ rank, score }) => (
+const PlayerStatistics = ({ balance, rank, score }) => (
   <View style={style.container}>
     <Rank rank={rank} />
     <Score score={score} />
-    {/* Statistics about the player position from last game */}
+    <Balance balance={balance} />
   </View>
 );
 
 PlayerStatistics.propTypes = {
+  ...Balance.propTypes,
   ...Rank.propTypes,
   ...Score.propTypes,
 };

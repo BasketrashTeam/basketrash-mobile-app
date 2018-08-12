@@ -6,6 +6,26 @@ const defaultElementStyle = {
 };
 
 export default StyleSheet.create({
+  balanceContainer: {
+    flexDirection: 'row',
+  },
+  balanceIcon: {
+    ...defaultElementStyle,
+    paddingRight: 5,
+  },
+  balanceIconNegative: {
+    color: '#691E06',
+  },
+  balanceIconPositive: {
+    color: '#566E3d',
+  },
+  balanceIconZero: {
+    color: '#0C4767',
+  },
+  balanceText: {
+    ...defaultElementStyle,
+    paddingLeft: 5,
+  },
   container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
