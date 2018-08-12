@@ -1,26 +1,38 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { Image } from 'react-native';
-import { Avatar, Card } from 'react-native-elements';
+import { Image, View } from 'react-native';
+import { Avatar, Card, Text } from 'react-native-elements';
 
 import style from './style';
 
 const RankingCard = (props) => {
-  const { avatarSource } = props;
+  const { avatarSource, firstName, lastName } = props;
 
   return (
-    <Card containerStyle={style.cardContainer}>
-      <Avatar width={128} source={avatarSource} />
-      {/* The first and last name of the player. The first name should be bigger and on top of last name */}
+    <Card containerStyle={style.cardContainer} flexDirection="row">
+      <View>
+        <Avatar width={128} source={avatarSource} />
+      </View>
+      <View style={style.nameGroup}>
+        <Text numberOfLines={1} style={style.firstName}>
+          {firstName}
+        </Text>
+        <Text numberOfLines={1} style={style.lastName}>
+          {lastName}
+        </Text>
+      </View>
       {/* A divider separating the player identifier from its statistics */}
       {/* The rank of the player. It must be special for 1st, 2nd and 3rd */}
       {/* How many points the player has */}
-      {/* Statistics about the player position from last game, last week and last month */}
+      {/* Statistics about the player position from last game */}
     </Card>
   );
 };
 
 RankingCard.propTypes = {
   avatarSource: Image.propTypes.source,
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
 };
 
 RankingCard.defaultProps = {
