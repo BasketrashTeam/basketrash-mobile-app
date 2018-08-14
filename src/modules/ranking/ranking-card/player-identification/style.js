@@ -5,7 +5,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   firstName: {
-    flex: 2,
+    flex: 1,
     fontSize: 44,
     padding: 5,
     textAlignVertical: 'center',
