@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native';
 
+import { TEXT_ON_SECONDARY } from '../../../../constants/colors';
+
 const defaultElementStyle = {
+  color: TEXT_ON_SECONDARY,
   fontSize: 30,
   textAlignVertical: 'center',
 };
@@ -17,10 +20,10 @@ export default StyleSheet.create({
     color: '#691E06',
   },
   balanceIconPositive: {
-    color: '#566E3d',
+    color: '#2c5530',
   },
   balanceIconZero: {
-    color: '#0C4767',
+    color: '#33658a',
   },
   balanceText: {
     ...defaultElementStyle,
@@ -34,13 +37,13 @@ export default StyleSheet.create({
     ...defaultElementStyle,
   },
   rankBronze: {
-    color: '#965A38',
+    color: '#563635',
   },
   rankGold: {
-    color: '#C98910',
+    color: '#ffd046',
   },
   rankSilver: {
-    color: '#A8A8A8',
+    color: '#6e675f',
   },
   scoreContainer: {
     flexDirection: 'row',
