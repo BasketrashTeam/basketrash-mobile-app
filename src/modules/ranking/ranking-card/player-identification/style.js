@@ -14,7 +14,6 @@ export default StyleSheet.create({
     textAlignVertical: 'center',
   },
   lastName: {
-    color: TEXT_ON_SECONDARY,
     flex: 1,
     fontSize: 22,
     padding: 5,

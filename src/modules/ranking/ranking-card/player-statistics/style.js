@@ -1,9 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { TEXT_ON_SECONDARY } from '../../../../constants/colors';
-
 const defaultElementStyle = {
-  color: TEXT_ON_SECONDARY,
   fontSize: 30,
   textAlignVertical: 'center',
 };
