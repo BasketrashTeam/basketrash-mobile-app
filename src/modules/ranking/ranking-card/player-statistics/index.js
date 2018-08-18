@@ -79,6 +79,7 @@ const Rank = ({ rank }) => {
   return (
     <Text style={style.rank}>
       {rank}
+      º
     </Text>
   );
 };
