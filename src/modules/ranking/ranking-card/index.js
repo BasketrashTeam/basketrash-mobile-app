@@ -1,4 +1,5 @@
 import React from 'react';
+import { ViewPropTypes } from 'react-native';
 import { Card, Divider } from 'react-native-elements';
 
 import PlayerIdentification from './player-identification';
@@ -9,6 +10,7 @@ const RankingCard = (props) => {
   const {
     avatarSource,
     balance,
+    cardContainerStyle,
     firstName,
     lastName,
     rank,
@@ -16,7 +18,7 @@ const RankingCard = (props) => {
   } = props;
 
   return (
-    <Card containerStyle={style.cardContainer}>
+    <Card containerStyle={{ ...style.cardContainer, ...cardContainerStyle }}>
       <PlayerIdentification avatarSource={avatarSource} firstName={firstName} lastName={lastName} />
       <Divider style={style.divider} />
       <PlayerStatistics balance={balance} rank={rank} score={score} />
@@ -27,6 +29,7 @@ const RankingCard = (props) => {
 RankingCard.propTypes = {
   ...PlayerIdentification.propTypes,
   ...PlayerStatistics.propTypes,
+  cardContainerStyle: ViewPropTypes.style,
 };
 
 RankingCard.defaultProps = {
