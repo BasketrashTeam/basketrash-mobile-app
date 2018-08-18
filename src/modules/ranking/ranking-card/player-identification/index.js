@@ -10,7 +10,7 @@ const PlayerIdentification = (props) => {
 
   return (
     <View style={style.container}>
-      <Avatar width={128} source={avatarSource} />
+      <Avatar width={64} source={avatarSource} />
       <View style={style.nameGroup}>
         <Text numberOfLines={1} style={style.firstName}>
           {firstName}

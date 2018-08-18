@@ -8,18 +8,20 @@ export default StyleSheet.create({
   },
   firstName: {
     color: TEXT_ON_SECONDARY,
-    flex: 1,
-    fontSize: 44,
+    flexShrink: 0,
+    fontSize: 40,
     padding: 5,
     textAlignVertical: 'center',
   },
   lastName: {
     flex: 1,
-    fontSize: 22,
+    fontSize: 20,
     padding: 5,
-    textAlignVertical: 'center',
+    paddingBottom: 12,
+    textAlignVertical: 'bottom',
   },
   nameGroup: {
     flex: 1,
+    flexDirection: 'row',
   },
 });
