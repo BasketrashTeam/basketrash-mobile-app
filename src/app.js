@@ -1,15 +1,7 @@
-import { createStackNavigator } from 'react-navigation';
+import React from 'react';
 
-import RankingScreen from './modules/ranking/ranking-screen';
-import style from './style';
+import Navigator from './navigator';
 
-export default createStackNavigator({
-  Ranking: {
-    screen: RankingScreen,
-    navigationOptions: () => ({
-      title: 'Ranking',
-      headerTitleStyle: style.headerTitle,
-      headerTitleContainerStyle: style.headerTitleContainer,
-    }),
-  },
-});
+const App = () => <Navigator />;
+
+export default App;
