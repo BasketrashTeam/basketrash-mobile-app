@@ -30,8 +30,8 @@ PlayerIdentification.propTypes = {
 };
 
 PlayerIdentification.defaultProps = {
-  // TODO: Change the default avatar to a image stored in the project
-  avatarSource: { uri: 'https://cdn.pixabay.com/photo/2017/02/26/07/54/basketball-2099656_960_720.jpg' },
+  /* eslint-disable global-require */
+  avatarSource: require('../../../../assets/images/profile-64x90.png'),
 };
 
 export default PlayerIdentification;
