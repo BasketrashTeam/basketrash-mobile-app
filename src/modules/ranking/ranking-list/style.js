@@ -10,6 +10,9 @@ export default StyleSheet.create({
     textAlign: 'center',
     textAlignVertical: 'center',
   },
+  firstElement: {
+    marginTop: 0,
+  },
   lastElement: {
     marginBottom: 15,
   },

@@ -19,12 +19,28 @@ const RankingList = ({ data }) => (
     data={data}
     keyExtractor={item => `${item.firstName} ${item.lastName}`}
     ListEmptyComponent={EmptyRanking}
-    renderItem={({ item, index }) => (
-      <RankingCard
-        {...item}
-        cardContainerStyle={index === data.length - 1 ? style.lastElement : undefined}
-      />
-    )}
+    renderItem={({ item, index }) => {
+      const getCardContainerStyle = () => {
+        let cardContainerStyle = {};
+
+        if (index === 0) {
+          cardContainerStyle = { ...cardContainerStyle, ...style.firstElement };
+        }
+
+        if (index === data.length - 1) {
+          cardContainerStyle = { ...cardContainerStyle, ...style.lastElement };
+        }
+
+        return cardContainerStyle;
+      };
+
+      return (
+        <RankingCard
+          {...item}
+          cardContainerStyle={getCardContainerStyle()}
+        />
+      );
+    }}
   />
 );
 
