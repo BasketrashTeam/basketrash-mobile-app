@@ -1,3 +1,5 @@
+// TODO: Internationalize moment
+import 'moment/locale/pt-br';
 import React from 'react';
 
 import Navigator from './navigator';
