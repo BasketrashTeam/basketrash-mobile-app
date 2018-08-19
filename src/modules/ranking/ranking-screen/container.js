@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 
+import { fetchRanking } from '../store/action-creators';
 import RankingScreen from './component';
 
 const mapStateToProps = ({ ranking }) => ({
@@ -8,7 +9,7 @@ const mapStateToProps = ({ ranking }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRanking: dispatch.ranking.fetchRanking,
+  fetchRanking: () => dispatch(fetchRanking()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RankingScreen);
