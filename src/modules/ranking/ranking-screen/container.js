@@ -5,7 +5,6 @@ import RankingScreen from './component';
 const mapStateToProps = ({ ranking }) => ({
   error: ranking.error,
   fetching: ranking.fetching,
-  lastGameDate: ranking.lastGameDate,
 });
 
 const mapDispatchToProps = dispatch => ({
