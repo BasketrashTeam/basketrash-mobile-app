@@ -8,7 +8,7 @@ import {
   FETCH_RANKING_SUCCESS,
 } from './action-types';
 
-export const fetchLastGameDate = () => async (dispatch) => {
+const fetchLastGameDate = () => async (dispatch) => {
   dispatch({ type: FETCH_LAST_GAME_DATE_START });
 
   try {
@@ -19,7 +19,7 @@ export const fetchLastGameDate = () => async (dispatch) => {
   }
 };
 
-export const fetchRanking = () => async (dispatch) => {
+const fetchRanking = () => async (dispatch) => {
   dispatch({ type: FETCH_RANKING_START });
 
   try {
@@ -28,4 +28,10 @@ export const fetchRanking = () => async (dispatch) => {
   } catch (error) {
     dispatch({ type: FETCH_RANKING_FAIL });
   }
+};
+
+/* eslint-disable import/prefer-default-export */
+export const fetch = () => async (dispatch) => {
+  fetchLastGameDate()(dispatch);
+  fetchRanking()(dispatch);
 };
