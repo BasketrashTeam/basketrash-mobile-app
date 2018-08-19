@@ -5,4 +5,9 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
+  loadingContainer: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+  },
 });
