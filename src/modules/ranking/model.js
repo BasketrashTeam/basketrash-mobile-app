@@ -1,38 +1,38 @@
-import { lastGameDate as lastGameDateMock, rank as rankMock } from './mock';
+import { lastGameDate as lastGameDateMock, ranking as rankingMock } from './mock';
 
 export default {
   state: {
     error: false,
     fetching: false,
     lastGameDate: lastGameDateMock,
-    rank: [],
+    ranking: [],
   },
   reducers: {
-    fetchRankStart: state => ({
+    fetchRankingStart: state => ({
       ...state,
       fetching: true,
     }),
-    fetchRankSuccess: (state, payload) => ({
+    fetchRankingSuccess: (state, payload) => ({
       ...state,
       error: false,
       fetching: false,
-      rank: payload,
+      ranking: payload,
     }),
-    fetchRankFail: state => ({
+    fetchRankingFail: state => ({
       ...state,
       error: true,
       fetching: false,
-      rank: [],
+      ranking: [],
     }),
   },
   effects: dispatch => ({
-    fetchRank: async () => {
-      // TODO: Fetch the API
+    fetchRanking: async () => {
       try {
-        dispatch.ranking.fetchRankStart();
-        dispatch.ranking.fetchRankSuccess(rankMock);
+        dispatch.ranking.fetchRankingStart();
+        // TODO: Fetch the API instead of using mock
+        dispatch.ranking.fetchRankingSuccess(rankingMock);
       } catch (error) {
-        dispatch.ranking.fetchRankFailed();
+        dispatch.ranking.fetchRankingFailed();
       }
     },
   }),

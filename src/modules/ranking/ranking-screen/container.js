@@ -5,7 +5,7 @@ import RankingScreen from './component';
 const mapStateToProps = state => ({ ...state.ranking });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRank: dispatch.ranking.fetchRank,
+  fetchRanking: dispatch.ranking.fetchRanking,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RankingScreen);

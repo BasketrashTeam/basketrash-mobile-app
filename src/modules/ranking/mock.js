@@ -1,6 +1,6 @@
 // TODO: This is a mock data and should be removed when there is a connection with the API
 
-export const rank = [{
+export const ranking = [{
   avatarSource: { uri: 'https://pt.gravatar.com/userimage/113350572/2c7640afb3bcf403521436383878daa3.jpg?size=200' },
   firstName: 'Felipe',
   lastName: 'Pinheiro',
