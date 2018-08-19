@@ -26,12 +26,12 @@ class RankingScreen extends PureComponent {
       return <Loading />;
     }
 
-    const { lastGameDate, ranking } = this.props;
+    const { lastGameDate } = this.props;
 
     return (
       <View style={style.container}>
         <RankingLastGame date={lastGameDate} />
-        <RankingList data={ranking} />
+        <RankingList />
       </View>
     );
   }
@@ -41,8 +41,6 @@ RankingScreen.propTypes = {
   fetching: PropTypes.bool.isRequired,
   fetchRanking: PropTypes.func.isRequired,
   lastGameDate: PropTypes.instanceOf(Date).isRequired,
-  /* eslint-disable react/require-default-props */
-  ranking: RankingList.propTypes.data,
 };
 
 export default RankingScreen;
