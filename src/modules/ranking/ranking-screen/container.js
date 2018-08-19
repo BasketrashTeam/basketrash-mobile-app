@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 
 import { fetchRanking } from '../store/action-creators';
+import { error as selectError, fetching as selectFetching } from '../store/selectors';
 import RankingScreen from './component';
 
-const mapStateToProps = ({ ranking }) => ({
-  error: ranking.error,
-  fetching: ranking.fetching,
+const mapStateToProps = state => ({
+  error: selectError(state),
+  fetching: selectFetching(state),
 });
 
 const mapDispatchToProps = dispatch => ({
