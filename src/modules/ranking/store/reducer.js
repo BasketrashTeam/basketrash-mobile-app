@@ -1,4 +1,3 @@
-import * as mock from '../mock';
 import {
   FETCH_LAST_GAME_DATE_FAIL,
   FETCH_LAST_GAME_DATE_START,
@@ -9,33 +8,57 @@ import {
 } from './action-types';
 
 const initialState = {
-  error: false,
-  fetching: false,
-  lastGameDate: mock.lastGameDate,
+  fetchingLastGameDate: false,
+  errorLastGameDate: false,
+  lastGameDate: null,
+  fetchingRanking: false,
+  errorRanking: false,
   ranking: [],
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_LAST_GAME_DATE_START:
+      return {
+        ...state,
+        fetchingLastGameDate: true,
+      };
+
+    case FETCH_LAST_GAME_DATE_SUCCESS:
+      return {
+        ...state,
+        errorLastGameDate: false,
+        fetchingLastGameDate: false,
+        lastGameDate: action.payload,
+      };
+
+    case FETCH_LAST_GAME_DATE_FAIL:
+      return {
+        ...state,
+        errorLastGameDate: true,
+        fetchingLastGameDate: false,
+        lastGameDate: null,
+      };
+
     case FETCH_RANKING_START:
       return {
         ...state,
-        fetching: true,
+        fetchingRanking: true,
       };
 
     case FETCH_RANKING_SUCCESS:
       return {
         ...state,
-        error: false,
-        fetching: false,
+        errorRanking: false,
+        fetchingRanking: false,
         ranking: action.payload,
       };
 
     case FETCH_RANKING_FAIL:
       return {
         ...state,
-        error: true,
-        fetching: false,
+        errorRanking: true,
+        fetchingRanking: false,
         ranking: [],
       };
 

@@ -15,8 +15,8 @@ const Loading = () => (
 
 class RankingScreen extends PureComponent {
   componentDidMount() {
-    const { fetchRanking } = this.props;
-    fetchRanking();
+    const { fetch } = this.props;
+    fetch();
   }
 
   render() {
@@ -26,9 +26,11 @@ class RankingScreen extends PureComponent {
       return <Loading />;
     }
 
+    const { lastGameDateExists } = this.props;
+
     return (
       <View style={style.container}>
-        <RankingLastGame />
+        {lastGameDateExists && <RankingLastGame />}
         <RankingList />
       </View>
     );
@@ -36,8 +38,9 @@ class RankingScreen extends PureComponent {
 }
 
 RankingScreen.propTypes = {
+  fetch: PropTypes.func.isRequired,
   fetching: PropTypes.bool.isRequired,
-  fetchRanking: PropTypes.func.isRequired,
+  lastGameDateExists: PropTypes.bool.isRequired,
 };
 
 export default RankingScreen;

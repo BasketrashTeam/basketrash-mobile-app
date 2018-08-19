@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
 
-import { fetchRanking } from '../store/action-creators';
-import { error as selectError, fetching as selectFetching } from '../store/selectors';
+import { fetchRanking, fetchLastGameDate } from '../store/action-creators';
+import { errorSelector, fetchingSelector, lastGameDateSelector } from '../store/selectors';
 import RankingScreen from './component';
 
 const mapStateToProps = state => ({
-  error: selectError(state),
-  fetching: selectFetching(state),
+  error: errorSelector(state),
+  fetching: fetchingSelector(state),
+  lastGameDateExists: lastGameDateSelector(state) !== null,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRanking: () => dispatch(fetchRanking()),
+  fetch: () => {
+    dispatch(fetchRanking());
+    dispatch(fetchLastGameDate());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RankingScreen);

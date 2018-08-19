@@ -8,6 +8,17 @@ import {
   FETCH_RANKING_SUCCESS,
 } from './action-types';
 
+export const fetchLastGameDate = () => async (dispatch) => {
+  dispatch({ type: FETCH_LAST_GAME_DATE_START });
+
+  try {
+    // TODO: Fetch the API instead of using mock
+    dispatch({ type: FETCH_LAST_GAME_DATE_SUCCESS, payload: mock.lastGameDate });
+  } catch (error) {
+    dispatch({ type: FETCH_LAST_GAME_DATE_FAIL });
+  }
+};
+
 export const fetchRanking = () => async (dispatch) => {
   dispatch({ type: FETCH_RANKING_START });
 
